@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo organização</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/media.css" />
+        <script src="js/scripts.js" defer></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    </head>
+    <body>
+        <header>
+            <h2>Todo Organização</h2>
+            <form id="new-to-do">
+                <label for="to-do">Nova Tarefa:</label>
+                <input
+                    type="text"
+                    name="to-do"
+                    id="to-do"
+                    placeholder="Digite sua tarefa" />
+            </form>
+        </header>
+        <div class="container">
+            <h2>Tarefas a fazer</h2>
+            <div class="area to-do"></div>
+            <h2>Fazendo</h2>
+            <div class="area doing"></div>
+            <h2>Concluido</h2>
+            <div class="area end"></div>
+        </div>
+    </body>
+</html>

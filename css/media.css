@@ -1,0 +1,37 @@
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .area {
+        max-width: 500px;
+        height: 400px;
+    }
+
+    button:hover span {
+        display: none;
+    }
+
+    button:hover {
+        color: #000;
+    }
+}
+
+@media (max-width: 500px) {
+    .area {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .row input {
+        width: 100px;
+    }
+}
+
+@media (max-width: 300px) {
+    .area {
+        max-width: 200px;
+    }
+}
