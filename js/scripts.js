@@ -78,9 +78,19 @@ const deleteTodo = (id, el) => {
 
 const copyTodo = (id) => {
     const todo = toDos.find((todo) => todo.id === id);
+    const description = todo.todo;
+    const todosCopy = toDos.filter((todo) => todo.todo.includes(description));
+
+    let desc = "";
+    if (todosCopy.length > 1) {
+        desc = `${description} copy (${todosCopy.length - 1})`;
+    } else {
+        desc = `${description} copy`;
+    }
+
     const obj = {
         id: createId(toDos),
-        todo: todo.todo,
+        todo: desc,
         doing: false,
         notInit: true,
         end: false,
@@ -144,7 +154,11 @@ const createRow = (obj) => {
     buttons.classList.add("buttons");
 
     if (!obj.notInit) {
-        const notInitBtn = createButton("list", "bi bi-list-ol", "Tarefa");
+        const notInitBtn = createButton(
+            "list",
+            "bi bi-list-ol",
+            "Não iniciado"
+        );
         notInitBtn.addEventListener("click", () => backNotInit(obj.id, row));
         buttons.appendChild(notInitBtn);
     }
@@ -153,14 +167,14 @@ const createRow = (obj) => {
         const doingBtn = createButton(
             "doing",
             "bi bi-arrow-clockwise",
-            "Fazendo"
+            "Em andamento"
         );
         doingBtn.addEventListener("click", () => doingTodo(obj.id, row));
         buttons.appendChild(doingBtn);
     }
 
     if (!obj.end) {
-        const endBtn = createButton("end-do", "bi bi-check-lg", "Feito");
+        const endBtn = createButton("end-do", "bi bi-check-lg", "Finalizado");
         endBtn.addEventListener("click", () => endTodo(obj.id, row));
         buttons.appendChild(endBtn);
     }

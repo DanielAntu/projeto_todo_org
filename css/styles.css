@@ -71,7 +71,8 @@ header input {
     padding: 10px;
     border: none;
     outline: none;
-    font-size: 16;
+    font-size: 16px;
+    padding: 0;
 }
 
 button {
